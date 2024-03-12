@@ -10,6 +10,6 @@ public class Parent : User
 
     public Parent() : base()
     {
-        //Student = new IList<Student>();
+        Students = new List<Student>();
     }
 }

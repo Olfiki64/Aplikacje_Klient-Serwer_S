@@ -19,7 +19,7 @@ public class Teacher : User
 
     public Teacher() : base()
     {
-        //Subjects = new IList<Subject>();
+        Subjects = new List<Subject>();
         Title = "brak";
     }
 }

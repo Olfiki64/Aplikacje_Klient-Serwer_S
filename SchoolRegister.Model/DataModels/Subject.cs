@@ -51,10 +51,10 @@ public class Subject
         Id = 0;
         Name = "brak";
         Description = "brak";
-        //SubjectGroups = new IList<SubjectGroup>();
+        SubjectGroups = new List<SubjectGroup>();
         Teacher = new Teacher();
         TeacherId = 0;
-        //Grades = new IList<Grade>();
+        Grades = new List<Grade>();
     }
 
 

@@ -53,11 +53,12 @@ public class Student : User
     {
         Group = new Group();
         GroupId = 0;
-        //Grades = new IList<Grade>();
+        Grades = new List<Grade>();
         Parent = new Parent();
         ParentId = 0;
         AverageGrade = 0.0;
-        //AverageGradePerSubject = new IDictionary<string,double>();
+        AverageGradePerSubject = new Dictionary<string,double>();
+        GradePerSubject = new Dictionary<string,List<GradeScale>>();
     }
 
 

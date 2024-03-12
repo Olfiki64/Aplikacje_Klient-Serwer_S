@@ -28,7 +28,7 @@ public class Group
     {
         Id = 0;
         Name = "brak";
-        //Students = new IList<Student>();
-        //SubjectGroups = new IList<SubjectGroup>();
+        Students = new List<Student>();
+        SubjectGroups = new List<SubjectGroup>();
     }
 }
