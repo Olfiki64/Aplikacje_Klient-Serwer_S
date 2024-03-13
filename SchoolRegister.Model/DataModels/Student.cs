@@ -1,15 +1,17 @@
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.Design;
 using System.Text.RegularExpressions;
 using SchoolRegister.Model.DataModels;
 
 public class Student : User
 {  
-    public Group Group
+    public virtual Group Group
     {
         get;
         set;
     }
+    [ForeignKey("Group")]
 
     public int? GroupId
     {
@@ -50,6 +52,7 @@ public class Student : User
         get;
     }*/
 
+    [NotMapped]
     public double AverageGrade => Grades == null || Grades.Count == 0 ? 0.0d : Math.Round(Grades.Average(g => (int)g.GradeValue), 1);
 
     public IDictionary<string, double> AverageGradePerSubject => Grades == null ? new Dictionary<string, double>() :

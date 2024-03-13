@@ -1,10 +1,14 @@
+using System.ComponentModel.DataAnnotations;
+
 public class Group
 {
+    [Key]
     public int Id
     {
         get;
         set;
     }
+    [Required]
 
     public string Name
     {
@@ -12,7 +16,7 @@ public class Group
         set;
     }
 
-    public IList<Student> Students
+    public virtual IList<Student> Students
     {
         get;
         set;

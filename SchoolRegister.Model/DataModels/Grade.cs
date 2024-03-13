@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 public class Grade
 {
     public DateTime DateOfIssue
@@ -12,11 +14,12 @@ public class Grade
         set;
     }
 
-    public Subject Subject
+    public virtual Subject Subject
     {
         get;
         set;
     }
+    [ForeignKey("Subject")]
 
     public int SubjectId
     {
