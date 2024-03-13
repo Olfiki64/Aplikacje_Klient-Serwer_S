@@ -15,7 +15,4 @@ public class Subject
     public IList<Grade> Grades{get; set;}
     public Subject(){}
 }
-
-
-
 }
