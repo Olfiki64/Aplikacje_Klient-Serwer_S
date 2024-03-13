@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace SchoolRegister.Model.DataModels;
+namespace SchoolRegister.Model.DataModels
 {
 public class Subject
 {
@@ -15,7 +15,4 @@ public class Subject
     public IList<Grade> Grades{get; set;}
     public Subject(){}
 }
-
-
-
 }

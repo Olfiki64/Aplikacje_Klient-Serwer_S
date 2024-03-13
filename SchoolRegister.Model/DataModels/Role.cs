@@ -1,4 +1,5 @@
 using System;
+using Microsoft.AspNetCore.Identity;
 
 namespace SchoolRegister.Model.DataModels
 {
@@ -11,7 +12,7 @@ namespace SchoolRegister.Model.DataModels
         }
         public Role(string name, RoleValue roleValue) : base(name)
         {
-            RoleValue=roleValue;
+        RoleValue = roleValue;
         }
     }
 }
