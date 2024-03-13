@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace SchoolRegister.Model.DataModels;
+namespace SchoolRegister.Model.DataModels
 {
 public class Subject
 {

@@ -17,7 +17,7 @@ public class Student : User
         .ToDictionary(avg => avg.SubjectName, avg =>avg.AvgGrade);
 
     public IDictionary<string,List<GradeScale>> GradesPerSubject => Grades == null ? new Dictionary<string,List<GradeScale>>(): Grades
-        .GroupBy(g=>g.SubjectName)
+        .GroupBy(g=>g.Subject.Name)
         .Select(g=> new {SubjectName = g.Key, GradeList = g.Select(x=>x.GradeValue).ToList()})
         .ToDictionary(x=>x.SubjectName, x=>x.GradeList);
     public Student(){}
