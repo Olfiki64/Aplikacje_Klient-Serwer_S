@@ -6,10 +6,10 @@ class Group {
     public IList<Student> Students {get;set;}
     public IList <SubjectGroup>  SubjectGroups {get;set;}
     public  Group(){
+        Id = 0;
+        Name = "puste";
         Students= new List<Student>();
         SubjectGroups= new List<SubjectGroup>();
-
     }
-
 
 }

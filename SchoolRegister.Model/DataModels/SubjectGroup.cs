@@ -6,9 +6,9 @@ class SubjectGroup {
     public  int GroupId {get;set;}
     public SubjectGroup() {
 
+        SubjectId = 0;
+        GroupId = 0;
         Subject = new Subject();
         Group = new Group();
-
     }
-
 }

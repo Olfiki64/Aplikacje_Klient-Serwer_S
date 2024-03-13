@@ -7,6 +7,4 @@ class Parent : User {
     public Parent(){
         Students= new List<Student>();
     }
-
-
 }

@@ -9,5 +9,4 @@ public class Role: IdentityRole<int>
     public Role(string name,RoleValue roleValue):base(name) {
         RoleValue = roleValue;
     }
-
 }

@@ -21,8 +21,11 @@ class Student:User {
         .ToDictionary(x=> x.SubjectName,x=>x.GradeList);
 
         public Student(){
+            GroupId = 0;
+            ParentId = 0;
+            Group = new Group();
             Grades = new List<Grade>();
+            Parent = new Parent ();
         }
-
 }
 

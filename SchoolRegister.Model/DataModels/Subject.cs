@@ -8,9 +8,12 @@ class Subject {
     public int? TeacherId {get;set;}
     public IList<Grade> Grades {get;set;}
     public Subject(){
+        Id = 0;
+        TeacherId = 0;
+        Name = "puste";
+        Description = "puste";
         SubjectGroups = new List<SubjectGroup>();
         Grades = new List<Grade>();
+        Teacher = new Teacher();
     }
-
-
 }
