@@ -34,7 +34,7 @@ public class Student : User
         set;
     }
 
-    public double AverageGrade
+    /*public double AverageGrade
     {
         get;
     }
@@ -47,18 +47,22 @@ public class Student : User
     public IDictionary<string,List<GradeScale>> GradePerSubject
     {
         get;
-    }
+    }*/
+
+    public double AverageGrade => Grades == null || Grades.Count == 0 ? 0.0d : Math.Round(Grades.Average(g => (int)global.GradeValue), 1);
+
+    public IDictionary
 
     public Student() : base()
     {
-        Group = new Group();
+        /*Group = new Group();
         GroupId = 0;
         Grades = new List<Grade>();
         Parent = new Parent();
         ParentId = 0;
         AverageGrade = 0.0;
         AverageGradePerSubject = new Dictionary<string,double>();
-        GradePerSubject = new Dictionary<string,List<GradeScale>>();
+        GradePerSubject = new Dictionary<string,List<GradeScale>>();*/
     }
 
 

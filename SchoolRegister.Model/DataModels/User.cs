@@ -9,8 +9,8 @@ public DateTime RegistrationDate { get; set; } = DateTime.Now;
 
 public User()
 {
-    FirstName = "brak";
-    LastName = "brak";
+    //FirstName = "brak";
+    //LastName = "brak";
 }
 
 }

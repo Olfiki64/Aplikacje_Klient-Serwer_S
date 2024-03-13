@@ -1,4 +1,4 @@
-public enum RoleValue
+public enum RoleValue : int
 {
     User = 0,
     Student = 0,

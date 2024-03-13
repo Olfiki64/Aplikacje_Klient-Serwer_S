@@ -1,4 +1,5 @@
-public enum GradeScale{
+public enum GradeScale : int
+{
     NDST = 2,
     DST = 3,
     DB = 4,

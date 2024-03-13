@@ -8,8 +8,10 @@ public class Role : IdentityRole<int>
         set;
     }
 
-    public Role()
-    {}
+    public Role() : base()
+    {
+        RoleValue = RoleValue.User;
+    }
 
     public Role(string name, RoleValue roleValue) : base(name)
     {
