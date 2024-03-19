@@ -7,9 +7,12 @@ namespace SchoolRegister.Model.DataModels
 {
     public class Group
     {
-        public int? ID {get;set;}
-        public string Name {get;set;} = null!;
+    //[Key]
+        public int Id {get; set;}
 
-        public IList<SubjectGroup> SubjectGroups {get;set;}=null!;
+        public string Name {get; set;} = null!;
+        public virtual IList<Student> Students {get; set;} = null!;
+        public IList<SubjectGroup> SubjectGroups {get; set;} = null!;
+        Group(){}
     }
 }
