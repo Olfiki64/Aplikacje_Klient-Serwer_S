@@ -25,5 +25,14 @@ namespace SchoolRegister.Model.DataModels
         .Select(g => new { SubjectName = g.Key, GradeList = g.Select(x => x.GradeValue).ToList() })
         .ToDictionary(x => x.SubjectName, x => x.GradeList);
 
+        public Student()
+        {
+            Group = new Group();
+            GroupId = 0;
+            Grades = new List<Grade>();
+            Parent = new Parent();
+            ParentId = 0;
+        }
+
     }
 }

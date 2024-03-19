@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SchoolRegister.Model.DataModels
 {
@@ -13,7 +16,14 @@ namespace SchoolRegister.Model.DataModels
     public Student Student {get; set;}
     
 
-    public Grade(){}
+    public Grade(){
+          DateOfIssue = new DateTime();
+        GradeValue = new GradeScale();
+        Subject = new Subject();
+        SubjectId = 0;
+        StudentId = 0;
+        Student = new Student();
+    }
 
 
     }
