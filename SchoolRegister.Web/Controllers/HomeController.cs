@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SchoolRegister.Web.Models;
+using SchoolRegister.ViewModels.VM;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SchoolRegister.Web.Controllers;
 
