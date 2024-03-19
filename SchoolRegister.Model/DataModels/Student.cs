@@ -1,5 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SchoolRegister.Model.DataModels
 {
