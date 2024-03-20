@@ -9,7 +9,7 @@ namespace SchoolRegister.Model.DataModels
     {
         public int Id {get;set;}
         public string Name {get;set;}=null!;
-        public IList<Student> Students{get;set;}=null!;
+        public virtual IList<Student> Students{get;set;}=null!;
         public IList<SubjectGroup> SubjectGroups {get;set;}=null!;
 
         public Group(){

@@ -8,5 +8,7 @@ namespace SchoolRegister.Model.DataModels
     public class Teacher
     {
         private IList<Subject> Subjects =null!;
+        public string Title{get;set;}=null!;
+        public Teacher(){}
     }
 }
