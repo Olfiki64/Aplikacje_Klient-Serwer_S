@@ -6,7 +6,7 @@ namespace SchoolRegister.Model.DataModels
     {
         [Key]
         public int Id {get; set;}
-
+        [Required]
         public string Name {get; set;} = null!;
         public virtual IList<Student> Students {get; set;} = null!;
         public IList<SubjectGroup> SubjectGroups {get; set;} = null!;
