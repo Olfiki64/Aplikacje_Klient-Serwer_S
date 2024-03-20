@@ -10,7 +10,6 @@ namespace SchoolRegister.Model.DataFiles
     public int Id { get; set; }
     public string Nazwa { get; set; }
     public string Opis { get; set; }
-
     public IList<GrupaPrzedmiotow> GrupyPrzedmiotow { get; set; }
     public Nauczyciel Nauczyciel { get; set; }
     public int? NauczycielId { get; set; }
