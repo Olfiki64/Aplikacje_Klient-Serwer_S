@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.RegularExpressions;
 
 public class SubjectGroup
@@ -8,6 +10,7 @@ public class SubjectGroup
         set;
     }
 
+    //[Key, Column(Order = 0]
     public int SubjectId
     {
         get;
@@ -20,6 +23,7 @@ public class SubjectGroup
         set;
     }
 
+    //[Key, Column(Order = 1)]
     public int GroupId
     {
         get;
