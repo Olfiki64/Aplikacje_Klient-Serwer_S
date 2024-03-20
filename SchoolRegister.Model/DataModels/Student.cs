@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace SchoolRegister.Model.DataModels;
 
-public class Student
+public class Student: User
 {
     public Group Group {get; set;} = null!;
     public int? groupId {get; set;} = null;
@@ -14,7 +14,5 @@ public class Student
     public IDictionary<string, double> AverageGradesPerSubject {get;}
     public IDictionary<string, List<GradeScale>> GradesPerSubject {get;}
 
-    public Student() {
-        
-    }
+    
 }
