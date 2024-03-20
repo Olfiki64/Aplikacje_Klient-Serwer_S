@@ -1,4 +1,4 @@
-﻿namespace SchoolRegister.Model;
+﻿namespace SchoolRegister.Model.DataModels;
 
 public enum GradeScale
 {
