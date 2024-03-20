@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Text.RegularExpressions;
 namespace SchoolRegister.Model.DataModels;
 
-class SubjectGroup {
+public class SubjectGroup {
     public Subject Subject {get;set;}
     public int SubjectId{get;set;}
     public Group Group {get;set;}
