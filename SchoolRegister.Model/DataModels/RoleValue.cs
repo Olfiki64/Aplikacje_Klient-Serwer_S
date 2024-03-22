@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SchoolRegister.Model.DataModels
 {
-    public class Grade
+    public class RoleValue
     {
 
     }
