@@ -2,14 +2,14 @@ using System.ComponentModel.DataAnnotations;
 
 public class Group
 {
-    //[Key]
+    [Key]
     public int Id
     {
         get;
         set;
     }
-    //[Required]
-
+    
+    [Required]
     public string Name
     {
         get;

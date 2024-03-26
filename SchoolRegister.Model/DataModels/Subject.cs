@@ -5,13 +5,13 @@ using SchoolRegister.Model.DataModels;
 
 public class Subject 
 {
-    //[Key]
+    [Key]
     public int Id
     {
         get;
         set;
     }
-    //[Required]
+    [Required]
 
     public string Name 
     {

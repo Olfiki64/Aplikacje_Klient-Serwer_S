@@ -75,6 +75,10 @@ modelBuilder.Entity<Subject>()
 ///Group
 modelBuilder.Entity<Group>()
 .HasKey(id => new {id.Id});
+
+modelBuilder.Entity<Group>()
+.Property(n => n.Name)
+.IsRequired();
 ///
 
 ///SubjectGroup
