@@ -44,6 +44,30 @@ modelBuilder.Entity<SubjectGroup>()
 .WithMany(sg => sg.SubjectGroups)
 .HasForeignKey(s => s.SubjectId)
 .OnDelete(DeleteBehavior.Restrict);
+
+modelBuilder.Entity<Grade>()
+.HasKey(sg => new { sg.StudentId, sg.SubjectId, sg.DateOfIssue });
+
+modelBuilder.Entity<Grade>()
+.HasOne(g => g.Student)
+.WithMany(sg => sg.Grades)
+.HasForeignKey(g => g.StudentId);
+
+modelBuilder.Entity<Grade>()
+.HasOne(g => g.Subject)
+.WithMany(sg => sg.Grades)
+.HasForeignKey(g => g.SubjectId);
+
+modelBuilder.Entity<Subject>()
+.HasKey(sg => new { sg.Id});
+
+modelBuilder.Entity<Subject>()
+.HasOne(g => g.Teacher)
+.WithMany(sg => sg.Subjects)
+.HasForeignKey(g => g.TeacherId);
+
+modelBuilder.Entity<Group>()
+.HasKey(sg => new { sg.Id });
 }
 }
 }
