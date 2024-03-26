@@ -8,7 +8,7 @@ public class Grade
         set;
     }
 
-    public GradeScale GradeValue
+    public virtual GradeScale GradeValue
     {
         get;
         set;
@@ -19,7 +19,7 @@ public class Grade
         get;
         set;
     }
-    [ForeignKey("Subject")]
+    //[ForeignKey("Subject")]
 
     public int SubjectId
     {
@@ -33,7 +33,7 @@ public class Grade
         set;
     }
 
-    public Student Student
+    public virtual Student Student
     {
         get;
         set;

@@ -5,13 +5,13 @@ using SchoolRegister.Model.DataModels;
 
 public class Subject 
 {
-    [Key]
+    //[Key]
     public int Id
     {
         get;
         set;
     }
-    [Required]
+    //[Required]
 
     public string Name 
     {
@@ -25,13 +25,13 @@ public class Subject
         set;
     }
 
-    public IList<SubjectGroup> SubjectGroups
+    public virtual IList<SubjectGroup> SubjectGroups
     {
         get;
         set;
     }
 
-    public Teacher Teacher
+    public virtual Teacher Teacher
     {
         get;
         set;
@@ -43,7 +43,7 @@ public class Subject
         set;
     }
 
-    public IList<Grade> Grades
+    public virtual IList<Grade> Grades
     {
         get;
         set;

@@ -4,26 +4,24 @@ using System.Text.RegularExpressions;
 
 public class SubjectGroup
 {
-    public Subject Subject
+    public virtual Subject Subject
     {
         get;
         set;
     }
 
-    //[Key, Column(Order = 0]
     public int SubjectId
     {
         get;
         set;
     }
 
-    public Group Group
+    public virtual Group Group
     {
         get;
         set;
     }
 
-    //[Key, Column(Order = 1)]
     public int GroupId
     {
         get;

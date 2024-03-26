@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Identity;
 
 public class Role : IdentityRole<int>
 {
-    public RoleValue RoleValue
+    public virtual RoleValue RoleValue
     {
         get;
         set;

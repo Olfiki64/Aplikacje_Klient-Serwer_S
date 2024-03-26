@@ -2,13 +2,13 @@ using System.ComponentModel.DataAnnotations;
 
 public class Group
 {
-    [Key]
+    //[Key]
     public int Id
     {
         get;
         set;
     }
-    [Required]
+    //[Required]
 
     public string Name
     {
@@ -22,7 +22,7 @@ public class Group
         set;
     }
 
-    public IList<SubjectGroup> SubjectGroups
+    public virtual IList<SubjectGroup> SubjectGroups
     {
         get;
         set;

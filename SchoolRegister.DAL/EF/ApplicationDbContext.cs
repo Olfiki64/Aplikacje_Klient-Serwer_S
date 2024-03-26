@@ -1,3 +1,4 @@
+using System.Data.SqlTypes;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SchoolRegister.Model.DataModels;
@@ -30,6 +31,7 @@ modelBuilder.Entity<User>()
 .HasValue<Parent>((int)RoleValue.Parent)
 .HasValue<Teacher>((int)RoleValue.Teacher);
 
+/// SubjectGroup
 modelBuilder.Entity<SubjectGroup>()
 .HasKey(sg => new { sg.GroupId, sg.SubjectId });
 
@@ -43,7 +45,49 @@ modelBuilder.Entity<SubjectGroup>()
 .WithMany(sg => sg.SubjectGroups)
 .HasForeignKey(s => s.SubjectId)
 .OnDelete(DeleteBehavior.Restrict);
+///
 
+///Grades
+modelBuilder.Entity<Grade>()
+.HasKey(g => new {g.DateOfIssue, g.SubjectId, g.StudentId});
+
+modelBuilder.Entity<Grade>()
+.HasOne(s => s.Student)
+.WithMany(g => g.Grades)
+.HasForeignKey(s => s.StudentId);
+
+modelBuilder.Entity<Grade>()
+.HasOne(s => s.Subject)
+.WithMany(g => g.Grades)
+.HasForeignKey(s => s.SubjectId);
+///
+
+///Subject
+modelBuilder.Entity<Subject>()
+.HasKey(i => new {i.Id});
+
+modelBuilder.Entity<Subject>()
+.HasOne(t=> t.Teacher)
+.WithMany(s => s.Subjects)
+.HasForeignKey(t => t.TeacherId);
+///
+
+///Group
+modelBuilder.Entity<Group>()
+.HasKey(id => new {id.Id});
+///
+
+///SubjectGroup
+modelBuilder.Entity<SubjectGroup>()
+.HasOne(g => g.Group)
+.WithMany(sg => sg.SubjectGroups)
+.HasForeignKey(g => g.GroupId);
+
+modelBuilder.Entity<SubjectGroup>()
+.HasOne(g => g.Group)
+.WithMany(sg => sg.SubjectGroups)
+.HasForeignKey(g => g.GroupId);
+///
 
 }
 }
