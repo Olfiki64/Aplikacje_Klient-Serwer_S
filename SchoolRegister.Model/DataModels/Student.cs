@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -9,7 +10,8 @@ namespace SchoolRegister.Model.DataModels
 {
     public class Student:User
     {
-        public Group Group {get;set;}
+        public virtual Group Group {get;set;}
+        [ForeignKey("Group")]
         public int? GroupId {get;set;}
 
         public IList<Grade> Grades {get;set;}

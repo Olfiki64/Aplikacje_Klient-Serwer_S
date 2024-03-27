@@ -6,6 +6,6 @@ public class Parent : User
     public IList<Student> Students {get;set;}
     public Parent()
     {
-        Students = new IList<Student>();
+        Students = new List<Student>();
     }
 }
