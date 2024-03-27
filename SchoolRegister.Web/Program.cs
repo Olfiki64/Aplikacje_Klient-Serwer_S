@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SchoolRegister.DAL.EF;
 using SchoolRegister.Model.DataModels;
-using SchoolRegister.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

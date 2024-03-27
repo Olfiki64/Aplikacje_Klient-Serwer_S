@@ -12,6 +12,7 @@ namespace SchoolRegister.Model.DataModels
         public virtual Group? Group { get; set; }
         [ForeignKey("Group")]
         public int? GroupId { get; set; }
+        
         public virtual IList<Grade> Grades { get; set; } = default!;
         public virtual Parent? Parent { get; set; }
         [ForeignKey("Parent")]
