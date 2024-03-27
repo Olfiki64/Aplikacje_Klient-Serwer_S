@@ -4,9 +4,9 @@ using System.Text.RegularExpressions;
 namespace SchoolRegister.Model.DataModels;
 public class SubjectGroup
 {
-    public Subject Subject {get; set;} =null!;
+    public virtual Subject Subject {get; set;} =null!;
     public int SubjectId {get; set;}
-    public Group Group {get; set;} = null!;
+    public virtual Group Group {get; set;} = null!;
     public int GroupId {get; set;}
     public SubjectGroup()
     {
