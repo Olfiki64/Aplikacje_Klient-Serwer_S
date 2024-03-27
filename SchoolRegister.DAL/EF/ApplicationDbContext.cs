@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SchoolRegister.Model.DataModels;
+
 namespace SchoolRegister.DAL.EF
 {
     public class ApplicationDbContext : IdentityDbContext<User, Role, int>
