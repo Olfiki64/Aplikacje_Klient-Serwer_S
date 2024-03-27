@@ -1,3 +1,4 @@
+using System.Data.SqlTypes;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SchoolRegister.Model.DataModels;
@@ -59,5 +60,16 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, int>
         .WithMany(s => s.Grades)
         .HasForeignKey(g => g.StudentId)
         .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<Subject>()
+        .HasKey(s => s.Id);
+
+        modelBuilder.Entity<Subject>()
+        .HasOne(g => g.Teacher)
+        .WithMany(sg => sg.Subjects)
+        .HasForeignKey(g => g.TeacherId);
+
+        modelBuilder.Entity<Group>()
+        .HasKey(g => g.Id);
     }
 }
