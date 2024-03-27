@@ -33,4 +33,4 @@ modelBuilder.Entity<User>()
 .HasValue<Teacher>((int)RoleValue.Teacher);
 }
 }
-}
+}   
