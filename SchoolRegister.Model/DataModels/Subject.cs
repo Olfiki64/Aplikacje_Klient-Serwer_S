@@ -13,10 +13,9 @@ namespace SchoolRegister.Model.DataModels
         [Required]
         public string Name {get; set;} = null!;
         public string Description {get; set;} = null!;
-        public IList<SubjectGroup> SubjectGroups {get; set;} = null!;
-        public Teacher Teacher {get; set;} = null!;
+        public virtual IList<SubjectGroup> SubjectGroups {get; set;} = null!;
+        public virtual Teacher Teacher {get; set;} = null!;
         public int? TeacherId {get; set;} = null!;
-        public IList<Grade> Grades {get; set;} = null!;
-        Subject(){}
+        public virtual IList<Grade> Grades {get; set;} = null!;
     }
 }

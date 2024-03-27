@@ -8,10 +8,10 @@ namespace SchoolRegister.DAL.EF
     public class ApplicationDbContext : IdentityDbContext<User, Role, int>
     {
         // table properties
-        public virtual DbSet<Grade> Grades { get; set; }
-        public virtual DbSet<Group> Groups { get; set; }
-        public virtual DbSet<Subject> Subjects { get; set; }
-        public virtual DbSet<SubjectGroup> SubjectGroups { get; set; }
+        public required virtual DbSet<Grade> Grades { get; set; }
+        public required virtual DbSet<Group> Groups { get; set; }
+        public required virtual DbSet<Subject> Subjects { get; set; }
+        public required virtual DbSet<SubjectGroup> SubjectGroups { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -33,6 +33,9 @@ namespace SchoolRegister.DAL.EF
 
             modelBuilder.Entity<SubjectGroup>()
                 .HasKey(sg => new { sg.GroupId, sg.SubjectId });
+
+            modelBuilder.Entity<Grade>()
+                .HasKey(sg => new { sg.StudentId, sg.SubjectId, sg.DateOfIssue });
 
             modelBuilder.Entity<SubjectGroup>()
                 .HasOne(g => g.Group)

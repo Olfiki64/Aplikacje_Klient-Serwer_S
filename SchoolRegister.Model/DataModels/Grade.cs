@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,10 +10,12 @@ namespace SchoolRegister.Model.DataModels
     {
         public DateTime DateOfIssue {get; set;}
         public GradeScale GradeValue {get; set;}
-        public Subject Subject {get; set;} = null!;
+        public virtual Subject Subject {get; set;} = null!;
+        [ForeignKey("Subject")]
         public int SubjectId {get; set;}
+        [ForeignKey("Student")]
         public int StudentId {get; set;}
-        public Student Student {get; set;} = null!;
+        public virtual Student Student {get; set;} = null!;
         Grade(){}
     }
 }
