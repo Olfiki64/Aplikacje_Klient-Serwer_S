@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SchoolRegister.Model.DataModels;
 using Microsoft.AspNetCore.Identity;
+using System.Data.SqlTypes;
 
 
-namespace SchoolRegister.DAL.EF
-{
+namespace SchoolRegister.DAL.EF;
+
 public class ApplicationDbContext : IdentityDbContext<User, Role, int>
 {
 // table properties
@@ -40,11 +41,16 @@ modelBuilder.Entity<SubjectGroup>()
 .HasOne(g => g.Group)
 .WithMany(sg => sg.SubjectGroups)
 .HasForeignKey(g => g.GroupId);
+
 modelBuilder.Entity<SubjectGroup>()
 .HasOne(s => s.Subject)
 .WithMany(sg => sg.SubjectGroups)
 .HasForeignKey(s => s.SubjectId)
 .OnDelete(DeleteBehavior.Restrict);
-}
+
+//
+
+
+
 }
 }
