@@ -17,8 +17,8 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, int>
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
-        //configuration commands
-        optionsBuilder.UseLazyLoadingProxies(); //enable lazy loading proxies
+        // configuration commands
+        optionsBuilder.UseLazyLoadingProxies(); // enable lazy loading proxies
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -32,6 +32,7 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, int>
         .HasValue<Parent>((int)RoleValue.Parent)
         .HasValue<Teacher>((int)RoleValue.Teacher);
 
+        // SubjectGroup
         modelBuilder.Entity<SubjectGroup>()
         .HasKey(sg => new { sg.GroupId, sg.SubjectId });
 
@@ -46,30 +47,35 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, int>
         .HasForeignKey(s => s.SubjectId)
         .OnDelete(DeleteBehavior.Restrict);
 
+        // Grades
         modelBuilder.Entity<Grade>()
         .HasKey(g => new { g.DateOfIssue, g.SubjectId, g.StudentId });
 
         modelBuilder.Entity<Grade>()
-        .HasOne(g => g.Subject)
-        .WithMany(s => s.Grades)
-        .HasForeignKey(g => g.SubjectId)
-        .OnDelete(DeleteBehavior.Restrict);
+        .HasOne(s => s.Student)
+        .WithMany(g => g.Grades)
+        .HasForeignKey(s => s.StudentId);
 
         modelBuilder.Entity<Grade>()
-        .HasOne(g => g.Student)
-        .WithMany(s => s.Grades)
-        .HasForeignKey(g => g.StudentId)
-        .OnDelete(DeleteBehavior.Restrict);
+        .HasOne(s => s.Subject)
+        .WithMany(g => g.Grades)
+        .HasForeignKey(s => s.SubjectId);
+
+        // Subject
+        modelBuilder.Entity<Subject>()
+        .HasKey(s => new { s.Id });
 
         modelBuilder.Entity<Subject>()
-        .HasKey(s => s.Id);
+        .HasOne(t => t.Teacher)
+        .WithMany(s => s.Subjects)
+        .HasForeignKey(t => t.TeacherId);
 
-        modelBuilder.Entity<Subject>()
-        .HasOne(g => g.Teacher)
-        .WithMany(sg => sg.Subjects)
-        .HasForeignKey(g => g.TeacherId);
+        // Group
+        modelBuilder.Entity<Group>()
+        .HasKey(g => new { g.Id });
 
         modelBuilder.Entity<Group>()
-        .HasKey(g => g.Id);
+        .Property(n => n.Name)
+        .IsRequired();
     }
 }
