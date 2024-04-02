@@ -12,6 +12,13 @@ public virtual IList<Grade> Grades { get; set; } = default!;
 public virtual Parent? Parent { get; set; }
 [ForeignKey("Parent")]
 public int? ParentId { get; set; }
+// public Student(){
+//     Group = new Group();
+//     GroupId = 0;
+//     Grades = new List<Grade>();
+//     Parent = new Parent();
+//     ParentId = 0;
+// }
 [NotMapped]
 public double AverageGrade => Grades == null || Grades.Count == 0 ? 0.0d :
 Math.Round(Grades.Average(g => (int)g.GradeValue), 1);
