@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SchoolRegister.Model.DataModels
 {
-    public class Teacher
+    public class Teacher : User
     {
         public IList<Subject> Subjects{get; set;}
         public string Titel{get; set;}
