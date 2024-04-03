@@ -22,3 +22,12 @@ namespace SchoolRegister.Model.DataModels
         }
     }
 }
+
+namespace SchoolRegister.Model.DataFiles
+{
+    public class Student
+    {
+        
+    }
+}
+
