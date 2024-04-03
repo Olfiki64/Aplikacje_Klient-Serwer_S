@@ -1,6 +1,9 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
+namespace SchoolRegister.Model.DataModels{
 public class Grade {
     public DateTime DateOfIssue  {get;set;}
     public virtual GradeScale GradeValue {get;set;}
@@ -18,4 +21,5 @@ public class Grade {
         Subject = new Subject();
         Student = new Student(); 
     }
+}
 }

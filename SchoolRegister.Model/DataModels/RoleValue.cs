@@ -1,3 +1,4 @@
+namespace SchoolRegister.Model.DataModels{
 
 public enum RoleValue:int {
     User=0,
@@ -5,4 +6,5 @@ public enum RoleValue:int {
     Parent=2,
     Teacher=3,
     Admin=4
+}
 }

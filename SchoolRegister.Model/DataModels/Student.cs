@@ -1,13 +1,20 @@
-
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Security.Cryptography.X509Certificates;
-using SchoolRegister.Model.DataModels;
+
+namespace SchoolRegister.Model.DataModels{
 
 public class Student:User {
 
-    public Group Group {get;set;}
+    public virtual Group Group {get;set;}
     public int? GroupId {get;set;}
-    public IList<Grade> Grades {get;set;}
-    public Parent Parent  {get;set;}
+    public virtual IList<Grade> Grades {get;set;}
+    public virtual Parent Parent  {get;set;}
     public  int? ParentId {get;set;}
 
     public double AverageGrade => Grades == null || Grades.Count == 0 ? 0.0d : Math.Round(Grades.Average(g=>(int)g.GradeValue),1);
@@ -29,4 +36,4 @@ public class Student:User {
             Parent = new Parent ();
         }
 }
-
+}
