@@ -31,5 +31,5 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, int>
             .HasValue<Student>((int)RoleValue.Student)
         .HasValue<Parent>((int)RoleValue.Parent)
         .HasValue<Teacher>((int)RoleValue.Teacher);
-}
-}
+    }
+}  
