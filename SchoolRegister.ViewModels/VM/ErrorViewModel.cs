@@ -1,8 +1,11 @@
-namespace SchoolRegister.ViewModels.VM;
+using System;
 
-public class ErrorViewModel
+namespace SchoolRegister.ViewModels.VM
 {
-    public string? RequestId { get; set; }
+    public class ErrorViewModel
+    {
+        public string? RequestId { get; set; }
 
-    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
 }
