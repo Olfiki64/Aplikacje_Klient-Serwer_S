@@ -5,6 +5,7 @@ namespace SchoolRegister.Model.DataModels
     Student = 1,
     Parent = 2,
     Teacher = 3,
-    Admin = 4
-}
+    Admin = 4,
+     User = 0
+    }
 }
