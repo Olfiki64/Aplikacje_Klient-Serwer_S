@@ -16,7 +16,7 @@ namespace SchoolRegister.DAL.EF
         public virtual DbSet<Subject> Subjects { get; set; }
         public virtual DbSet<SubjectGroup> SubjectGroups { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options) { }
+        : base(options) { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -28,12 +28,13 @@ namespace SchoolRegister.DAL.EF
             base.OnModelCreating(modelBuilder);
             // Fluent API commands
             modelBuilder.Entity<User>()
-                .ToTable("AspNetUsers")
-                .HasDiscriminator<int>("UserType")
-                .HasValue<User>((int)RoleValue.User)
-                .HasValue<Student>((int)RoleValue.Student)
-                .HasValue<Parent>((int)RoleValue.Parent)
-                .HasValue<Teacher>((int)RoleValue.Teacher);
+            .ToTable("AspNetUsers")
+            .HasDiscriminator<int>("UserType")
+            .HasValue<User>((int)RoleValue.User)
+            .HasValue<Student>((int)RoleValue.Student)
+            .HasValue<Parent>((int)RoleValue.Parent)
+            .HasValue<Teacher>((int)RoleValue.Teacher);
+
             modelBuilder.Entity<SubjectGroup>()
                 .HasKey(sg => new { sg.GroupId, sg.SubjectId });
             modelBuilder.Entity<SubjectGroup>()
@@ -45,6 +46,14 @@ namespace SchoolRegister.DAL.EF
                 .WithMany(sg => sg.SubjectGroups)
                 .HasForeignKey(s => s.SubjectId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Grade>()
+            .HasKey(g => new { g.DateOfIssue, g.SubjectId,g.StudentId });
+
+            modelBuilder.Entity<Grade>()
+            .HasOne(s=>s.Student)
+            .WithMany(g=>g.Grades)
+            .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

@@ -1,15 +1,11 @@
+using Microsoft.AspNetCore.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SchoolRegister.Model.DataModels
+namespace SchoolRegister.Model.DataModels;
+public class Parent : User
 {
-    public class Parent : User
-{
-    public IList<Student> Students { get; set; } = null!;
+    public virtual IList<Student> Students {get; set;} = null!;
     public Parent()
     {
+
     }
-}
 }
