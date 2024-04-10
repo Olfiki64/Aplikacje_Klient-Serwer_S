@@ -42,12 +42,36 @@ namespace SchoolRegister.Services.ConcreteServices
 
         public SubjectVm GetSubject(Expression<Func<Subject, bool>> filterExpression)
         {
-            throw new NotImplementedException();
+        try
+            {
+                if (filterExpression == null)
+                    throw new ArgumentNullException($" FilterExpression is null");
+                var subjectEntity = DbContext.Subjects.FirstOrDefault(filterExpression);
+                var subjectVm = Mapper.Map<SubjectVm>(subjectEntity);
+                return subjectVm;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }
         }
 
         public IEnumerable<SubjectVm> GetSubjects(Expression<Func<Subject, bool>> filterExpression = null)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var subjectEntities = DbContext.Subjects.AsQueryable();
+                if (filterExpression != null)
+                    subjectEntities = subjectEntities.Where(filterExpression);
+                var subjectVms = Mapper.Map<IEnumerable<SubjectVm>>(subjectEntities);
+                return subjectVms;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }
         }
     }
 }
