@@ -1,13 +1,12 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace SchoolRegister.ViewModels.VM;
+
 public class StudentVm : UserVm
 {  
-    public virtual Group Group
+    public virtual GroupVm Group
     {
         get;
         set;
-    } = null!;
+    }=null!;
 
     public int? GroupId
     {
@@ -15,17 +14,17 @@ public class StudentVm : UserVm
         set;
     }
 
-    public virtual IList<Grade> Grades
+    public virtual IList<GradeVm> Grades
     {
         get;
         set;
-    } = null!;
+    }=null!;
 
-    public virtual Parent Parent
+    public virtual ParentVm Parent
     {
         get;
         set;
-    } = null!;
+    }=null!;
 
     public int? ParentId
     {

@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
 namespace SchoolRegister.ViewModels.VM;
 public class UserVm : IdentityUser<int>
 {
