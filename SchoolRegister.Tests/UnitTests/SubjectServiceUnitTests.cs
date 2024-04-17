@@ -56,7 +56,8 @@ var editSubjectVm = new AddOrUpdateSubjectVm()
 Id = 1,
 Name = "Aplikacje webowe",
 Description = null,
-TeacherId = 1
+TeacherId = 1 //aaadad
+
 };
 var editedSubjectVm = _subjectService.AddOrUpdateSubject(editSubjectVm);
 Assert.NotNull(editedSubjectVm);
