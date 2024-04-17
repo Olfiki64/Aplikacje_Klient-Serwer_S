@@ -1,3 +1,5 @@
+using SchoolRegister.DAL.EF;
+
 namespace SchoolRegister.Tests.UnitTests;
 public class GroupServiceUnitTests : BaseUnitTests
 {

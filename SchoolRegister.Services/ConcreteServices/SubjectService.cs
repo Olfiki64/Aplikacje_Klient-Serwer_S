@@ -11,7 +11,7 @@ namespace SchoolRegister.Services.ConcreteServices;
 public class SubjectService : BaseService, ISubjectService
 {
     public SubjectService(ApplicationDbContext dbContext, IMapper mapper, ILogger logger)
-     : base(dbContext, mapper, logger) {}
+     : base(dbContext, mapper, logger) { }
 
     public SubjectVm AddOrUpdateSubject(AddOrUpdateSubjectVm addOrUpdateVm)
     {

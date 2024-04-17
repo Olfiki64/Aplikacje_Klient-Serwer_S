@@ -1,3 +1,6 @@
+using SchoolRegister.DAL.EF;
+using SchoolRegister.Model.DataModels;
+
 namespace SchoolRegister.Tests.UnitTests;
 public class GradeServiceUnitTests : BaseUnitTests
 {
